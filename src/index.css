@@ -9,6 +9,33 @@ body {
 	padding: 0;
 }
 
+
+button{
+	width:75px;
+	height:75px;
+	border-radius:15px;
+	background-color:#3D1D1D;
+	text-align:center;
+	font-size:2rem;
+	color:#ffffff;
+	border:none;
+}
+#clear{
+	background-color:#A62B2B;
+	width: 170px;
+}
+#zero{
+	width: 170px;
+}
+#equals{
+	height: 170px;
+	align-self: end;
+}
+.action{
+	background-color: #CC8822;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
