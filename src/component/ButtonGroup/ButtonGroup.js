@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '../Button/Button'
 
-const ButtonGroup = () => {
+const ButtonGroup = (props) => {
 
 	const buttons = [
 		{id:"zero",value: 0},
@@ -37,12 +37,14 @@ const style= {
 	borderRadius:5,
 	backgroundColor:"#C4C4C4",
 	justifyItems:"center",
-	padding:"15px 15px"
+	padding:"15px 15px",
+	marginTop:35,
+	boxShadow: "inset -2px -2px 2px rgba(0, 0, 0, 0.25), inset 2px 2px 2px rgba(0, 0, 0, 0.25)"
 }
 
 	return (
 		<div style={style}>
-			{buttons.map(button => <Button key={button.id} button={button}/>)}
+			{buttons.map(button => <Button key={button.id} button={button} handleClick = {props.handleClick}/>)}
 		</div>
 	)
 }

@@ -13,7 +13,7 @@ import React from 'react'
 const Button = (props) => {
 	const{id, value, category} = props.button
 	return (
-		<button  className={category ?  category : null} style={{gridArea:`${id}`}} id={id}>
+		<button  className={category ?  category : null} style={{gridArea:`${id}`}} id={id} onClick={(e)=>props.handleClick(e.target.innerText)}>
 			{value}
 		</button>
 	)
