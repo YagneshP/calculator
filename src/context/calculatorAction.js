@@ -69,9 +69,9 @@ export const clicked = (
     } else {
 			let currentValue =
       typeof displayValue === "number" ? " " + displayValue : displayValue;
-      if (endDecimal.test(currentValue)) {
-        currentValue = currentValue + 0;
-      }
+      // if (endDecimal.test(currentValue)) {
+      //   currentValue = currentValue + 0;
+      // }
       const operatorArray = currentValue.match(moreOperator);
       if (operatorArray) {
         let modifiedDisplayValue = operatorArray.reduce((acc, curr) => {

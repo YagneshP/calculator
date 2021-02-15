@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
-
+import "./ButtonGroup.css"
 const ButtonGroup = (props) => {
   const buttons = [
     { id: "zero", value: 0 },
@@ -21,28 +21,10 @@ const ButtonGroup = (props) => {
     { id: "decimal", value: "." },
     { id: "clear", value: "AC" },
   ];
-  const style = {
-    display: "grid",
-    gridTemplateColumns: `1fr 1fr 1fr 1fr`,
-    gridTemplateRows: `1fr 1fr 1fr 1fr`,
-    gridTemplateAreas: `"clear clear divide multiply"
-	"seven eight nine subtract"
-	"four five six add"
-	"one two three equals"
-	"zero zero decimal equals"`,
-    width: 400,
-    height: 500,
-    borderRadius: 5,
-    backgroundColor: "#C4C4C4",
-    justifyItems: "center",
-    padding: "15px 15px",
-    marginTop: 35,
-    boxShadow:
-      "inset -2px -2px 2px rgba(0, 0, 0, 0.25), inset 2px 2px 2px rgba(0, 0, 0, 0.25)",
-  };
+  
 
   return (
-    <div style={style}>
+    <div className="ButtonGroup">
       {buttons.map((button) => (
         <Button key={button.id} button={button} />
       ))}

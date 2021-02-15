@@ -12,8 +12,8 @@ body {
 }
 
 button {
-  width: 75px;
-  height: 75px;
+  width: 4.7rem;
+  height: 4.7rem;
   display: block;
   position: relative;
   outline: none;
@@ -36,14 +36,14 @@ button:active {
 }
 #clear {
   background-color: #a62b2b;
-  width: 170px;
+  width: 10.9rem;
 }
 #zero {
-  width: 170px;
+  width: 10.9rem;
 }
 #equals {
-  height: 170px;
-  align-self: end;
+  height: 10.9rem;
+  align-self: start;
 }
 .action {
   background-color: #cc8822;
@@ -51,14 +51,14 @@ button:active {
 
 #display {
   width: 100%;
-  height: 70px;
+  height: 4.5rem;
   border-radius: 5px;
   background-color: #9ac899;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 20px auto;
   text-align: right;
   font-family: "Orbitron", sans-serif;
-  font-size: 36px;
+  font-size: 2.25rem;
   letter-spacing: 1.2px;
 }
 
