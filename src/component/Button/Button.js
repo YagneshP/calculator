@@ -1,22 +1,29 @@
-import React from 'react'
+import React from "react";
+import { clicked } from "../../context/calculatorAction";
+import CalculatorContext from "../../context/calculatorContext";
 
-// const style = {
-// 	width:75,
-// 	height:75,
-// 	borderRadius:15,
-// 	backgroundColor:"#3D1D1D",
-// 	textAlign:"center",
-// 	fontSize:"2rem",
-// 	color:"#ffffff",
-// 	border:"none"
-// }
 const Button = (props) => {
-	const{id, value, category} = props.button
-	return (
-		<button  className={category ?  category : null} style={{gridArea:`${id}`}} id={id} onClick={(e)=>props.handleClick(e.target.innerText)}>
-			{value}
-		</button>
-	)
-}
+  const { id, value, category } = props.button;
 
-export default Button
+  const calculator = React.useContext(CalculatorContext);
+  const handleClick = (e) => {
+    clicked(
+      calculator.dispatch,
+      e.target.innerText,
+      calculator.state.displayValue,
+      calculator.state.evalutedValue
+    );
+  };
+  return (
+    <button
+      className={category ? category : null}
+      style={{ gridArea: `${id}` }}
+      id={id}
+      onClick={handleClick}
+    >
+      {value}
+    </button>
+  );
+};
+
+export default Button;
