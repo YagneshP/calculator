@@ -5,7 +5,7 @@ const decimalReg = /^\./g;
 const endDecimal = /.$/g;
 const consecutiveDecimalReg = /\.{2}/g;
 const multipleDecimalReg = /\d*\.\d*\./g;
-const moreOperator = /([+,*,/,-][+,*,/])/g;
+const moreOperator = /([+,*,\/,\-]{1,}[+,*,\/])/g;
 const operatorGroup = /[+\-\/\*]/;
 
 export const clicked = (
@@ -16,7 +16,8 @@ export const clicked = (
 ) => {
   if (enteredValue !== "=") {
     let newValue = displayValue + enteredValue;
-    if (evalutedValue !== "" && operatorGroup.test(evalutedValue)) {
+		console.log(newValue)
+    if (evalutedValue !== "" && operatorGroup.test(enteredValue)) {
       dispatch({
         type: actionTypes.ENTER,
         payload: evalutedValue + enteredValue,
@@ -73,11 +74,14 @@ export const clicked = (
       //   currentValue = currentValue + 0;
       // }
       const operatorArray = currentValue.match(moreOperator);
+			console.log(operatorArray)
       if (operatorArray) {
         let modifiedDisplayValue = operatorArray.reduce((acc, curr) => {
           let newString = acc.replace(curr, curr.slice(curr.length - 1));
+					console.log(newString)
           return newString;
         }, currentValue);
+				console.log(modifiedDisplayValue)
         let modifiedNumber =
           Math.round(eval(modifiedDisplayValue) * 10000) / 10000; //Math.round(val*10000)/10000
         dispatch({

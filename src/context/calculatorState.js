@@ -8,7 +8,7 @@ const calculatorReducer = (state, action) => {
       return {
         ...state,
         displayValue: action.payload,
-        evalutedValue: "",
+       
       };
     case actionTypes.EVALUTE:
       return {
