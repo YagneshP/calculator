@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
-import "./ButtonGroup.css"
+// import "./ButtonGroup.css"
 const ButtonGroup = (props) => {
   const buttons = [
     { id: "zero", value: 0 },
@@ -24,7 +24,7 @@ const ButtonGroup = (props) => {
   
 
   return (
-    <div className="ButtonGroup">
+    <div className="buttonGroup">
       {buttons.map((button) => (
         <Button key={button.id} button={button} />
       ))}

@@ -16,17 +16,14 @@ export const clicked = (
 ) => {
   if (enteredValue !== "=") {
     let newValue = displayValue + enteredValue;
-		console.log(newValue)
     if (evalutedValue !== "" && operatorGroup.test(enteredValue)) {
       dispatch({
         type: actionTypes.ENTER,
         payload: evalutedValue + enteredValue,
       });
-    } else if (
-      evalutedValue !== "" &&
-      enteredValue !== "." &&
-      enteredValue !== "AC"
-    ) {
+    } 
+		else if (evalutedValue !== "" && enteredValue !== "." && enteredValue !== "AC") {
+			console.log("enteredValue", enteredValue)
       dispatch({
         type: actionTypes.ENTER,
         payload: enteredValue,
@@ -70,15 +67,10 @@ export const clicked = (
     } else {
 			let currentValue =
       typeof displayValue === "number" ? " " + displayValue : displayValue;
-      // if (endDecimal.test(currentValue)) {
-      //   currentValue = currentValue + 0;
-      // }
       const operatorArray = currentValue.match(moreOperator);
-			console.log(operatorArray)
       if (operatorArray) {
         let modifiedDisplayValue = operatorArray.reduce((acc, curr) => {
           let newString = acc.replace(curr, curr.slice(curr.length - 1));
-					console.log(newString)
           return newString;
         }, currentValue);
 				console.log(modifiedDisplayValue)

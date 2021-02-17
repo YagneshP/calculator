@@ -21,7 +21,7 @@ const Button = (props) => {
       id={id}
       onClick={handleClick}
     >
-      {value}
+      <span id="buttonText">{value}</span>
     </button>
   );
 };

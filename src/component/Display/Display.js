@@ -5,7 +5,7 @@ const Display = (props) => {
   const calculator = React.useContext(CalculatorContext);
   return (
     <div id="display">
-      {calculator.state.displayValue === "" ? 0 : calculator.state.displayValue}
+      <p id="digit">{calculator.state.displayValue === "" ? 0 : calculator.state.displayValue}</p>
     </div>
   );
 };
